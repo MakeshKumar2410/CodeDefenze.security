@@ -1,0 +1,14 @@
+{
+  "name": "codedefenze-admin",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "serve . -l 5174"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  },
+  "dependencies": {
+    "codedefenze": "file:.."
+  }
+}

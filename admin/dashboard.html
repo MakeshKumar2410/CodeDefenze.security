@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Codedefenze.security</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <span class="brand">codedefenze<span>.admin</span></span>
+      <nav id="nav">
+        <button data-tab="dashboard" class="active">Dashboard</button>
+        <button data-tab="enrollments">Enrollments</button>
+        <button data-tab="messages">Messages</button>
+        <button data-tab="testimonials">Testimonials</button>
+        <button data-tab="courses">Courses</button>
+        <button data-tab="students">Students</button>
+        <button data-tab="resources">Resources</button>
+      </nav>
+      <button class="logout-btn" id="logout-btn">Log out</button>
+    </aside>
+
+    <main class="main-area">
+      <div class="topbar">
+        <h2 id="page-title">Dashboard</h2>
+        <span class="who" id="who"></span>
+      </div>
+
+      <div id="alert" class="alert hidden"></div>
+
+      <section id="tab-dashboard" class="tab"></section>
+      <section id="tab-enrollments" class="tab hidden"></section>
+      <section id="tab-messages" class="tab hidden"></section>
+      <section id="tab-testimonials" class="tab hidden"></section>
+      <section id="tab-courses" class="tab hidden"></section>
+      <section id="tab-students" class="tab hidden"></section>
+      <section id="tab-resources" class="tab hidden"></section>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

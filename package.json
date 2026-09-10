@@ -1,0 +1,19 @@
+{
+  "name": "codedefenze",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:admin": "npm --prefix admin run dev",
+    "dev:all": "concurrently -n frontend,backend,admin -c blue,green,magenta \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:admin\"",
+    "install:all": "npm install && npm install --prefix frontend && npm install --prefix backend && npm install --prefix admin",
+    "seed:admin": "npm --prefix backend run seed:admin"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}
