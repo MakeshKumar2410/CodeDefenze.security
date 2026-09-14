@@ -1,0 +1,192 @@
+:root {
+  --sky-50: #f5fbff;
+  --sky-100: #e8f4fc;
+  --sky-200: #cce7f7;
+  --sky-500: #3a96cc;
+  --sky-600: #1a6fa8;
+  --navy: #0c2d48;
+  --navy-soft: #1a3a52;
+  --text: #0c2d48;
+  --text-muted: #4a667a;
+  --white: #ffffff;
+  --border: #d4e8f5;
+  --success: #1a8a5c;
+  --danger: #c62828;
+  --font-display: 'Outfit', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --radius: 10px;
+  --shadow: 0 8px 32px rgba(26, 111, 168, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--sky-50);
+}
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--navy); margin: 0 0 0.5rem; }
+
+/* ---------- Login page ---------- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.login-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.25rem;
+  width: 100%;
+  max-width: 380px;
+}
+.login-card p.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--sky-600);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Shell layout ---------- */
+.admin-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 220px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  flex-shrink: 0;
+}
+.sidebar .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 2rem; display: block; }
+.sidebar .brand span { color: var(--sky-500); }
+.sidebar nav { display: flex; flex-direction: column; gap: 0.25rem; }
+.sidebar nav button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.92rem;
+}
+.sidebar nav button:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.sidebar nav button.active { background: var(--sky-600); color: #fff; }
+.sidebar .logout-btn {
+  margin-top: 2rem;
+  all: unset;
+  cursor: pointer;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+.sidebar .logout-btn:hover { color: #fff; }
+
+.main-area { flex: 1; padding: 2rem; max-width: 1100px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.topbar .who { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ---------- Cards / stats ---------- */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+.stat-card strong { display: block; font-size: 1.8rem; color: var(--navy); font-family: var(--font-display); }
+.stat-card span { color: var(--text-muted); font-size: 0.85rem; }
+
+.panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+
+/* ---------- Tables ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+
+/* ---------- Forms ---------- */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--navy); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  background: var(--sky-50);
+}
+.form-group textarea { min-height: 90px; resize: vertical; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+}
+.btn-primary { background: var(--sky-600); color: #fff; }
+.btn-primary:hover { background: var(--sky-500); }
+.btn-outline { border: 1px solid var(--sky-600); color: var(--sky-600); }
+.btn-outline:hover { background: var(--sky-100); }
+.btn-danger { color: var(--danger); border: 1px solid var(--danger); }
+.btn-danger:hover { background: #fdecea; }
+.btn-sm { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ---------- Tags / badges ---------- */
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; }
+.badge-new { background: var(--sky-100); color: var(--sky-600); }
+.badge-contacted { background: #fff4e0; color: #a6690a; }
+.badge-converted { background: #e6f6ee; color: var(--success); }
+.badge-unread { background: #fdecea; color: var(--danger); }
+.badge-read { background: var(--sky-100); color: var(--text-muted); }
+.badge-pending { background: #fff4e0; color: #a6690a; }
+.badge-approved { background: #e6f6ee; color: var(--success); }
+
+.empty-state { color: var(--text-muted); text-align: center; padding: 2rem 0; font-size: 0.9rem; }
+
+.alert { padding: 0.7rem 1rem; border-radius: 8px; font-size: 0.88rem; margin-bottom: 1rem; }
+.alert-error { background: #fdecea; color: var(--danger); }
+.alert-success { background: #e6f6ee; color: var(--success); }
+
+.row-actions { display: flex; gap: 0.5rem; }
+
+.repeatable-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--sky-50);
+}
+.repeatable-item .row-actions { justify-content: flex-end; margin-top: 0.5rem; }
+
+.hidden { display: none !important; }
+
+@media (max-width: 720px) {
+  .admin-shell { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .sidebar nav { flex-direction: row; flex-wrap: wrap; }
+  .main-area { padding: 1.25rem; }
+}
